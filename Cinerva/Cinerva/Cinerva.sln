@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinerva.Data", "Cinerva.Data\Cinerva.Data.csproj", "{7939D937-5F9A-4A63-A82B-ABF51BA7F7EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinerva.TestConsole", "ConsoleTest\Cinerva.TestConsole.csproj", "{648F1661-FA6A-4780-9794-34267481F6A3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7939D937-5F9A-4A63-A82B-ABF51BA7F7EB} = {7939D937-5F9A-4A63-A82B-ABF51BA7F7EB}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7939D937-5F9A-4A63-A82B-ABF51BA7F7EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7939D937-5F9A-4A63-A82B-ABF51BA7F7EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7939D937-5F9A-4A63-A82B-ABF51BA7F7EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7939D937-5F9A-4A63-A82B-ABF51BA7F7EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{648F1661-FA6A-4780-9794-34267481F6A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{648F1661-FA6A-4780-9794-34267481F6A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{648F1661-FA6A-4780-9794-34267481F6A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{648F1661-FA6A-4780-9794-34267481F6A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {858845BE-15AF-4826-B93F-4AEB44B9482D}
+	EndGlobalSection
+EndGlobal
