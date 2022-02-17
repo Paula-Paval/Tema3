@@ -29,11 +29,14 @@ namespace Cinerva.Data
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<RoomReservation> RoomReservations { get; set; }
 
+        public CinervaDbContext(DbContextOptions<CinervaDbContext> options):base(options) { }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=cinerva;Integrated Security=True")
                 .LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information);
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()

@@ -3,12 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinerva.Data", "Cinerva.Data\Cinerva.Data.csproj", "{7939D937-5F9A-4A63-A82B-ABF51BA7F7EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cinerva.Data", "Cinerva.Data\Cinerva.Data.csproj", "{7939D937-5F9A-4A63-A82B-ABF51BA7F7EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cinerva.TestConsole", "ConsoleTest\Cinerva.TestConsole.csproj", "{648F1661-FA6A-4780-9794-34267481F6A3}"
-	ProjectSection(ProjectDependencies) = postProject
-		{7939D937-5F9A-4A63-A82B-ABF51BA7F7EB} = {7939D937-5F9A-4A63-A82B-ABF51BA7F7EB}
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cinerva.Services", "Cinerva.Services\Cinerva.Services.csproj", "{F6A4B4C7-F921-4228-B1D4-F08EA72E849E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cinerva.Web", "Cinerva.Web\Cinerva.Web.csproj", "{602D7FBE-B0A2-4BC2-ABAC-C24CF670A039}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cinerva.TestConsole", "ConsoleTest\Cinerva.TestConsole.csproj", "{91A00FA0-4BD9-4476-BA16-286F1C22CFA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +21,18 @@ Global
 		{7939D937-5F9A-4A63-A82B-ABF51BA7F7EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7939D937-5F9A-4A63-A82B-ABF51BA7F7EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7939D937-5F9A-4A63-A82B-ABF51BA7F7EB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{648F1661-FA6A-4780-9794-34267481F6A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{648F1661-FA6A-4780-9794-34267481F6A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{648F1661-FA6A-4780-9794-34267481F6A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{648F1661-FA6A-4780-9794-34267481F6A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6A4B4C7-F921-4228-B1D4-F08EA72E849E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6A4B4C7-F921-4228-B1D4-F08EA72E849E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6A4B4C7-F921-4228-B1D4-F08EA72E849E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6A4B4C7-F921-4228-B1D4-F08EA72E849E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{602D7FBE-B0A2-4BC2-ABAC-C24CF670A039}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{602D7FBE-B0A2-4BC2-ABAC-C24CF670A039}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{602D7FBE-B0A2-4BC2-ABAC-C24CF670A039}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{602D7FBE-B0A2-4BC2-ABAC-C24CF670A039}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91A00FA0-4BD9-4476-BA16-286F1C22CFA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91A00FA0-4BD9-4476-BA16-286F1C22CFA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91A00FA0-4BD9-4476-BA16-286F1C22CFA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91A00FA0-4BD9-4476-BA16-286F1C22CFA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

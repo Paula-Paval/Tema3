@@ -1,0 +1,126 @@
+﻿
+@model PagedList.IPagedList<Cinerva.Web.Models.PropertyViewModel>
+
+
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Id
+            </th>
+            <th>
+               Name
+            </th>
+            <th>
+                Rating
+            </th>
+            <th>
+               Description
+            </th>
+            <th>
+               Address
+            </th>
+            <th>
+               Phone
+            </th>
+            <th>
+               TotalRooms
+            </th>
+            <th>
+               NumberOfDaysForRefunds
+            </th>
+            <th>
+                City
+            </th>
+            <th>
+                Administrator
+            </th>
+            <th>
+                PropetyType
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                @Html.DisplayFor( modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalRooms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfDaysForRefunds)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CityName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdministratorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropetyTypeName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.Id })|
+                @Html.ActionLink("Delete", "Delete", new {  id=item.Id  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+    <a asp-action="Index"
+   asp-route-pageNumber="@(Model.PageNumber - 1)"
+   class="btn btn-default @prevDisabled">
+    Previous
+</a>
+<a asp-action="Index"
+   asp-route-pageNumber="@(Model.PageNumber + 1)"
+   class="btn btn-default @nextDisabled">
+    Next
+</a>
+
+<br />
+
+
+
+
+
+

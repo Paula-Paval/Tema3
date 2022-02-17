@@ -8,10 +8,13 @@ using System.Threading.Tasks;
 
 namespace Cinerva.TestConsole.Queries
 {
-    public class Query
+    public class Query:IQuery
     {
         public CinervaDbContext Cinerva { get; set; }
-
+        public Query(CinervaDbContext context)
+        {
+            Cinerva = context;
+        }
         public void GetPropertiesFromIasi()
         {
             Console.WriteLine("2:");
@@ -95,7 +98,7 @@ namespace Cinerva.TestConsole.Queries
             Console.WriteLine("7:");
 
             var q7 = Cinerva.Rooms
-                        .Where(r => (r.Reservations.Count == 0 || r.Reservations.Count(d => d.CheckIndate > DateTime.Now && d.CheckOutdate < DateTime.Now) > 0)
+                        .Where(r => (r.Reservations.Count == 0 || r.Reservations.Count(d => d.CheckIndate > DateTime.Now || d.CheckOutdate < DateTime.Now) > 0)
                         && r.Property.GeneralFeatures.Count(x=>x.Name== "Swimming pool/ Jacuzzi")>0)
                        .GroupBy(r => r.Property.Name)
                        .Select(g => new { PropertyName = g.Key })
@@ -346,11 +349,11 @@ namespace Cinerva.TestConsole.Queries
             Console.WriteLine($"19:");
 
             var q19 = Cinerva.Rooms
-                .Where(r => r.Property.City.Name == "London" && r.Reservations.Count > 0)
+                .Where(r => r.Property.City.Name == "Iasi" && r.Reservations.Count > 0)
                 .GroupBy(r => new { Type = r.RoomCategory.Name, r.Property.Name })
-                .Select(g => new { g.Key.Type, g.Key.Name, Number = g.Count() })
+                .Select(g => new { g.Key.Type, g.Key.Name, Number = g.Count() })//sum reservation group categorie=>max
                 .Where(s => s.Number == Cinerva.Rooms
-                                 .Where(r => r.Property.City.Name == "London" && r.Reservations.Count > 0)
+                                 .Where(r => r.Property.City.Name == "Iasi" && r.Reservations.Count > 0)
                                  .GroupBy(r => new { Type = r.RoomCategory.Name, r.Property.Name })
                                  .Select(g => new { g.Key.Type, g.Key.Name, Number = g.Count() })
                                   .Max(g => g.Number))
